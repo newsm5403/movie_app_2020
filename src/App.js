@@ -1,14 +1,20 @@
 import React from 'react';
 
-function Potato(){
-  return <h1>I like Potato</h1>;
+function Food({name}){
+  return <h1>I like {name}</h1>;
 }
+
+const foodILike = [
+  {name: "Kimchi"},
+  {name: "ramen"}
+];
 
 function App() {
   return (
   <div>
     <h1>Hello!</h1>
-    <Potato />
+    {foodILike.map(dish => <Food name = {dish.name}/>
+    )}
   </div>
   );
 }
